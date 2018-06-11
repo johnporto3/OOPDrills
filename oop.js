@@ -103,19 +103,67 @@
 
 
 
-//Inheritance Section
+//Inheritance Sectiony
 //1
 
-class vehicle {
-    constructor(manufacturer, wheels) {
+class Vehicle {
+    constructor(type, manufacturer, wheels) {
+        this.type = type
         this.manufacturer = manufacturer;
         this.wheels = wheels;
     }
     aboutVehicle() {
-        console.log('This vehicle is a ${type}, made by ${manufacturer} and has ${wheels}.')
+        console.log('This vehicle is a ${type}, made by ${manufacturer} and has ${wheels}.');
     }
+}
 
-class truck extends vehicle {
-    constructor(wheels, doors, )
+class Truck extends Vehicle {
+    constructor(manufacturer, wheels, doors, bed) {
+        super(ExceptionType[Truck]);
+        this.manufacturer = manufacturer;
+        this.wheels = wheels;
+        this.doors = doors;
+        this.bed = bed;
+        Boolean.prototype.bed = function() {
+            if (this.valueOf() == true) {
+                return "truck bed";
+            }
+        }
+    }
+    aboutVehicle() {
+        console.log('This vehicle is made by ${manufacturer}, it has ${wheels}, ${doors} and a ${bed}.');
+    };
 }
+
+class Sedan extends Vehicle {
+    constructor(manufacturer, size, mpg) {
+        this.manufacturer = manufacturer;
+        this.size = size;
+        this.mpg = mpg;
+    }
+    aboutVehicle() {
+        console.log('This vehicle is made by ${manufacturer}, it is a ${size} sized car and gets ${mpg} miles to the gallon.');
+    };
 }
+class Motorcycle extends Vehicle {
+    constructor(manufacturer, wheels, steering, doors) {
+        this.manufacturer = manufacturer;
+        this.wheels = wheels;
+        this.steering = steering;
+        this.doors = doors;
+    }
+    aboutVehicle() {
+        console.log('This vehicle is made by ${manufacturer}, it has ${wheels} wheels, uses ${steering} to steer and has ${doors} doors.');
+    }
+}
+
+
+let v1 = new Vehicle('sports car', 'Porche', 4);
+let t1 = new Truck('Ford', 4, 2, 'bed');
+let s1 = new Sedan('Dodge', 'Medium', 45);
+let m1 = new Motorcycle('Harley Davidson', 2, 'handlebars', 0);
+
+v1.aboutVehicle();
+t1.aboutVehicle();
+s1.aboutVehicle();
+m1.aboutVehicle();
