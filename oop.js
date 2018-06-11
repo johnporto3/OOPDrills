@@ -77,26 +77,45 @@
 
 //5
 
-class Person {
-    constructor(name, city, age) {
-        this.name = name;
-        this.city = city;
-        this.age = age;
+// class Person {
+//     constructor(name, city, age) {
+//         this.name = name;
+//         this.city = city;
+//         this.age = age;
+//     }
+
+//     sayHey(){
+//         console.log(`Hey! my name is ${this.name}. I am ${this.age} old and live in ${this.city}.`);
+//     }    
+// }
+
+// let p1 = new Person ('Paul', 'Oahu', 35);
+// let p2 = new Person ('Andrew', 'Bristol', 40);
+// let p3 = new Person ('Mike', 'Huntington Beach', 32);
+// let p4 = new Person ('Frank', 'Riverside', 41);
+// let p5 = new Person ('Bobby', 'Irvine', 25);
+
+// p1.sayHey();
+// p2.sayHey();
+// p3.sayHey();
+// p4.sayHey();
+// p5.sayHey();
+
+
+
+//Inheritance Section
+//1
+
+class vehicle {
+    constructor(manufacturer, wheels) {
+        this.manufacturer = manufacturer;
+        this.wheels = wheels;
+    }
+    aboutVehicle() {
+        console.log('This vehicle is a ${type}, made by ${manufacturer} and has ${wheels}.')
     }
 
-    sayHey(){
-        console.log(`Hey! my name is ${this.name}. I am ${this.age} old and live in ${this.city}.`);
-    }    
+class truck extends vehicle {
+    constructor(wheels, doors, )
 }
-
-let p1 = new Person ('Paul', 'Oahu', 35);
-let p2 = new Person ('Andrew', 'Bristol', 40);
-let p3 = new Person ('Mike', 'Huntington Beach', 32);
-let p4 = new Person ('Frank', 'Riverside', 41);
-let p5 = new Person ('Bobby', 'Irvine', 25);
-
-p1.sayHey();
-p2.sayHey();
-p3.sayHey();
-p4.sayHey();
-p5.sayHey();
+}
